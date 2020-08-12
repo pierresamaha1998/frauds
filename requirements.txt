@@ -1,0 +1,6 @@
+flask
+pandas
+numpy
+sklearn
+gunicorn
+xgboost

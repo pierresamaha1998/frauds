@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+<head>
+    <title>Fraud Detection</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Merchant_id:
+        <input name="Merchant_id" type="number" required>
+        <br>
+        <br> Average Amount/transaction/day:
+        <input name="Average Amount/transaction/day" type="number" required>
+        <br>
+        <br> Transaction_amount:
+        <input name="Transaction_amount" type="number" required>
+        <br>
+        Is declined:
+        <input name="Is declined" type="number" required>
+        <br>
+        Total Number of declines/day:
+        <input name="Total Number of declines/day" type="number" required>
+        <br>
+        isForeignTransaction:
+        <input name="isForeignTransaction" type="number" required>
+        <br>
+        isHighRiskCountry:
+        <input name="isHighRiskCountry" type="number" required>
+        <br>
+        Daily_chargeback_avg_amt:
+        <input name="Daily_chargeback_avg_amt" type="number" required>
+        <br>
+        6_month_avg_chbk_amt:
+        <input name="6_month_avg_chbk_amt" type="number" required>
+        <br>
+        6-month_chbk_freq:
+        <input name="6-month_chbk_freq" type="number" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    
+        <br> PREDICTION fraud or not?:
+           <p style="font-size:50px">{{ result }}</p>
+    
+</div>
+</html>
